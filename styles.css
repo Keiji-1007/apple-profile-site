@@ -1,0 +1,103 @@
+:root {
+  --bg: #050505;
+  --card: #151515;
+  --text: #f5f5f5;
+  --subtext: #c2c2c2;
+  --border: #2a2a2a;
+  --accent: #8ab4ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at top, #111, var(--bg) 40%);
+  color: var(--text);
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.profile-card {
+  width: min(100%, 420px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  object-fit: cover;
+}
+
+.name {
+  margin: 14px 0 8px;
+  font-size: 1.4rem;
+}
+
+.bio {
+  margin: 0;
+  color: var(--subtext);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.link-list {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  background: #101010;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.link-item:hover,
+.link-item:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  background: #181818;
+  outline: none;
+}
+
+.card-footer {
+  margin-top: 16px;
+  text-align: right;
+  color: #9c9c9c;
+}
+
+@media (max-width: 360px) {
+  .profile-card {
+    padding: 20px 16px;
+  }
+
+  .name {
+    font-size: 1.25rem;
+  }
+}
